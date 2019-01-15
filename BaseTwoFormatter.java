@@ -3,21 +3,28 @@
  *PD 6
  *Number Formatter
  */
-
-//i have no idea what base two means 
 public class BaseTwoFormatter implements NumberFormatter
 {
 	private int num;
-	private String newNum;
-	public BaseTwoFormatter(int num)
-	{
-		this.num = num;
-		newNum = Integer.toString(num, 2);
-	
-	}
+	private String stringNum = "";
+	private String baseNum;
 	public String format(int num)
 	{
-		return newNum;
+		this.num = num;
+		stringNum = Integer.toString(num);
+		for(int i = 0; i< stringNum.length(); i++)
+		{
+			if(num % 2 == 0)
+			{
+				baseNum += "0";
+			}
+			else
+				baseNum += "1";
+			
+		}
+		return baseNum;
+		
 	}
+
 	
 }
